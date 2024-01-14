@@ -1,0 +1,36 @@
+<div class="add-new-order p-2">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add New Order</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="activeModal.dismiss()"
+    ></button>
+  </div>
+
+  <div class="row m-0 p-0 pt-3">
+    <div class="col-12">
+      <label for="personName" [autofocus]="true" class="form-label fw-bold"
+        >Person name <span class="text-danger">*</span></label
+      >
+      
+      <input
+        type="text"
+        name="personName"
+        class="form-control"
+        placeholder="Person name"
+        [(ngModel)]="order.personName"
+      />
+    </div>
+    <div class="col-12">
+      <app-market [canOrder]="true"></app-market>
+    </div>
+    <div class="col-12 text-end pt-2">
+      <button class="btn btn-light m-2" (click)="activeModal.close()">
+        Close
+      </button>
+      
+    </div>
+  </div>
+</div>
